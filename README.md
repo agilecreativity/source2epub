@@ -135,7 +135,7 @@ Use my personal favourite [seoul256][] colorscheme
 source2epub -u https://github.com/agilecreativity/source2epub.git --exts rb --theme seoul256
 ```
 
-Which generated the following [pdf output file](/samples/source2epub_seoul256_colorscheme.epub)
+Which generated the following [epub output file](/samples/source2epub_seoul256_colorscheme.epub)
 
 The example screenshot:
 

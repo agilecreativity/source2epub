@@ -15,6 +15,7 @@ Gem::Specification.new do |spec|
                          }
   spec.homepage      = "https://github.com/agilecreativity/source2epub"
   spec.license       = "MIT"
+  spec.required_ruby_version = '>= 2.1.0'
   spec.files         = Dir.glob("{bin,lib,config}/**/*") + %w[Gemfile
                                                               Rakefile
                                                               source2epub.gemspec
@@ -26,13 +27,15 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
+
   spec.add_runtime_dependency "thor", "~> 0.19.1"
   spec.add_runtime_dependency "git", "~> 1.2.7"
-  spec.add_runtime_dependency "awesome_print", "~> 1.2.0"
-  spec.add_runtime_dependency "agile_utils", "~> 0.2.0"
-  spec.add_runtime_dependency "code_lister", "~> 0.2.0"
-  spec.add_runtime_dependency "vim_printer", "~> 0.2.0"
+  spec.add_runtime_dependency "agile_utils", "~> 0.2.1"
+  spec.add_runtime_dependency "code_lister", "~> 0.2.1"
+  spec.add_runtime_dependency "vim_printer", "~> 0.2.1"
   spec.add_runtime_dependency "eeepub", "~> 0.8.1"
+
+  spec.add_development_dependency "awesome_print", "~> 1.2.0"
   spec.add_development_dependency "bundler", "~> 1.6.2"
   spec.add_development_dependency "gem-ctags", "~> 1.0.6"
   spec.add_development_dependency "guard", "~> 2.6.1"
