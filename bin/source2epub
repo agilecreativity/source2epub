@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+require_relative "../lib/source2epub"
+require_relative "../config/initializers/source2epub"
+include Source2Epub
+if ARGV.empty?
+  Source2Epub::CLI.start(%w[usage])
+else
+  Source2Epub::CLI.start(%w[export].concat(ARGV))
+end
