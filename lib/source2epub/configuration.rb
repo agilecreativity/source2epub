@@ -3,7 +3,7 @@ module Source2Epub
     attr_accessor :creator,
                   :publisher,
                   :published_date,
-                  :identifier,
+                  :identifier
     def initialize
       @creator        = "https://github.com/agilecreativity/source2epub"
       @publisher      = "http://agilecreativity.com"

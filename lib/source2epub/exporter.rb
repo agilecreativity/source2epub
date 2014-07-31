@@ -12,6 +12,7 @@ module Source2Epub
                 :theme,
                 :command,
                 :epub_title
+
     attr_reader :base_dir,
                 :repo_name,
                 :output_path
@@ -49,7 +50,7 @@ module Source2Epub
       cleanup
     end
 
-  private
+    private
 
     def clone
       if File.exist?(output_path)
@@ -96,33 +97,19 @@ module Source2Epub
     # Convert list of html to list of epub file
     def htmls2epub
       input_file = File.expand_path("#{output_path}/vim_printer_#{repo_name}.tar.gz")
-
       if File.exist?(input_file)
-        FileUtils.mkdir_p output_dir
-        AgileUtils::FileUtil.gunzip input_file, output_dir
+        FileUtils.mkdir_p(output_dir)
+        AgileUtils::FileUtil.gunzip(input_file, output_dir)
         xhtml_files = CodeLister.files base_dir:  output_dir,
                                        recursive: true,
                                        exts:      %w[xhtml],
                                        non_exts:  []
         project_dir = File.expand_path(File.dirname(output_dir) + "../../#{Source2Epub::TMP_DIR}/#{repo_name}")
-
         xhtml_files.map! do |f|
           File.expand_path(f.gsub(/^\./, project_dir))
         end
-
         nav_list = nav_index(xhtml_files, project_dir)
-        # Note: need to assign the local varaiable for this to work
-        title = epub_title
-        epub = EeePub.make do
-          title title
-          creator Source2Epub.configuration.creator
-          publisher Source2Epub.configuration.publisher
-          date Source2Epub.configuration.published_date
-          identifier Source2Epub.configuration.identifier, scheme: "URL"
-          files(xhtml_files)
-          nav nav_list
-        end
-        epub.save(output_filename)
+        create_epub(xhtml_files, nav_list)
       end
     end
 
@@ -183,6 +170,21 @@ module Source2Epub
       FileUtils.rm_rf File.expand_path(File.dirname(output_dir) + "../../#{Source2Epub::TMP_DIR}")
       # Also remove the 'vim_printer_#{repo_name}.tar.gz' if we have one
       FileUtils.rm_rf File.expand_path(File.dirname(output_dir) + "../../#{repo_name}/vim_printer_#{repo_name}.tar.gz")
+    end
+
+    def create_epub(xhtml_files, nav_list)
+      # Note: need to assign the local varaiable for this to work
+      title = epub_title
+      epub = EeePub.make do
+        title title
+        creator Source2Epub.configuration.creator
+        publisher Source2Epub.configuration.publisher
+        date Source2Epub.configuration.published_date
+        identifier Source2Epub.configuration.identifier, scheme: "URL"
+        files(xhtml_files)
+        nav nav_list
+      end
+      epub.save(output_filename)
     end
   end
 end

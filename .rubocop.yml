@@ -3,9 +3,10 @@ AllCops:
     - Gemfile
     - Rakefile
     - bin/*
-    - source2epub.gemspec
     - lib/**/*.rb
     - test/**/*.rb
+  Exclude:
+    - source2epub.gemspec
 
 # Avoid long parameter lists
 ParameterLists:

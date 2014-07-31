@@ -1,3 +1,7 @@
+#### 0.2.2
+
+- Code refactoring
+
 #### 0.2.1
 
 - Make ruby 2.1.0+ as required in spec file
