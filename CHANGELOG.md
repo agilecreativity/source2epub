@@ -1,3 +1,7 @@
+#### 0.2.4
+
+- Use custom version of 'eeepub' gem due to errors in the 'rubyzip'
+
 #### 0.2.3
 
 - Support ruby 1.9.3+

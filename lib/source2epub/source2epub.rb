@@ -4,6 +4,7 @@ require_relative "./configuration"
 module Source2Epub
   CustomError = Class.new(StandardError)
   class << self
+
     # Clone the given repository from github
     #
     # @param [String] url the github repository url like 'https://github.com/schacon/ruby-git.git'
