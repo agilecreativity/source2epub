@@ -60,7 +60,6 @@ module Source2Epub
         ]
         args.concat(["--non-exts"]).concat(non_exts) unless non_exts.empty?
       end
-      # puts "FYI: input options for vim_printer #{args}"
       VimPrinter::CLI.start(args)
     end
 

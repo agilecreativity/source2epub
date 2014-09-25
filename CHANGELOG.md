@@ -1,3 +1,8 @@
+#### 0.2.5
+
+- Update the gem dependency to latest version
+- Misc cleanup
+
 #### 0.2.4
 
 - Use custom version of 'eeepub' gem due to errors in the 'rubyzip'

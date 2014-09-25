@@ -25,7 +25,9 @@ module Source2Epub
     #
     # @option opts [Array<String>] :exts the list of file extension to be used
     # @option opts [Array<String>] :non_exts the list of file without extension to be used
-    # @option opts [String]        :theme the theme to use for `vim_printer`
+    # @option opts [String]        :theme the theme to use for `vim_printer` (optional)
+    # @option opts [String]        :command the shell command to be used if any (optional)
+    # @option opts [String]        :epub_title the title for the output (optional)
     def initialize(url, opts = {})
       @url         = url
       @base_dir    = Dir.pwd
@@ -82,6 +84,7 @@ module Source2Epub
 
     # Convert files to htmls
     def files2htmls
+      # get input from the shell command if one is specified
       if command
         Source2Epub.files_to_htmls base_dir: output_path,
                                    theme:    theme,
