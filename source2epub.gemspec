@@ -16,14 +16,14 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/agilecreativity/source2epub"
   spec.license       = "MIT"
   spec.required_ruby_version = '>= 1.9.3'
-  spec.files         = Dir.glob("{bin,lib,config}/**/*") + %w[Gemfile
-                                                              Rakefile
-                                                              source2epub.gemspec
-                                                              README.md
-                                                              CHANGELOG.md
-                                                              LICENSE
-                                                              .rubocop.yml
-                                                              .gitignore]
+  spec.files         = Dir.glob("{bin,lib}/**/*") + %w[Gemfile
+                                                       Rakefile
+                                                       source2epub.gemspec
+                                                       README.md
+                                                       CHANGELOG.md
+                                                       LICENSE
+                                                       .rubocop.yml
+                                                       .gitignore]
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
@@ -33,7 +33,10 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "agile_utils", "~> 0.2.2"
   spec.add_runtime_dependency "code_lister", "~> 0.2.2"
   spec.add_runtime_dependency "vim_printer", "~> 0.2.3"
-  spec.add_runtime_dependency 'eeepub', '~> 0.8.2'
+
+  # Note: this is the custom version of the gem, as the official version 0.8.1
+  # contain bugs in the zip library
+  spec.add_runtime_dependency "eeepub_ext", "~> 0.8.2"
 
   spec.add_development_dependency "awesome_print", "~> 1.2.0"
   spec.add_development_dependency "bundler", "~> 1.7.3"

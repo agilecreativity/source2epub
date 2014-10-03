@@ -1,6 +1,3 @@
-require "git"
-require "code_lister"
-require_relative "./configuration"
 module Source2Epub
   CustomError = Class.new(StandardError)
   class << self
@@ -63,7 +60,7 @@ module Source2Epub
       VimPrinter::CLI.start(args)
     end
 
-  private
+    private
 
     # Always expand the directory name so that '~' or '.' is expanded correctly
     def base_dir(dir_name)

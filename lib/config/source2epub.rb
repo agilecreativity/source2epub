@@ -1,6 +1,5 @@
 module Source2Epub
   class << self
-    # ./lib/source2epub/configuration.rb
     def update_config
       Source2Epub.configure do |config|
         config.creator        = "Burin C"

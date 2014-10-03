@@ -1,6 +1,3 @@
-require "thor"
-require "vim_printer"
-require_relative "source2epub"
 module Source2Epub
   class CLI < Thor
     desc "export", "Export a given github URL or local project directory to an epub file"

@@ -1,3 +1,9 @@
+#### 0.2.6
+
+- Cleanup the gem's dependencies
+- Use require instead of require_relative when possible
+- Use my custom version of eeepub (eeepub_ext)
+
 #### 0.2.5
 
 - Update the gem dependency to latest version

@@ -1,8 +1,3 @@
-#!/usr/bin/env ruby
-require "uri"
-require "agile_utils"
-require "eeepub"
-require_relative "../source2epub"
 module Source2Epub
   TMP_DIR = "source2epub_tmp"
   class Exporter
