@@ -1,3 +1,7 @@
+#### 0.2.7
+
+- Update gem's dependencies
+
 #### 0.2.6
 
 - Cleanup the gem's dependencies

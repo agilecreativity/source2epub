@@ -30,13 +30,13 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "thor", "~> 0.19.1"
   spec.add_runtime_dependency "git", "~> 1.2.7"
-  spec.add_runtime_dependency "agile_utils", "~> 0.2.2"
-  spec.add_runtime_dependency "code_lister", "~> 0.2.2"
-  spec.add_runtime_dependency "vim_printer", "~> 0.2.3"
+  spec.add_runtime_dependency "agile_utils", "~> 0.2.3"
+  spec.add_runtime_dependency "code_lister", "~> 0.2.4"
+  spec.add_runtime_dependency "vim_printer", "~> 0.2.5"
 
-  # Note: this is the custom version of the gem, as the official version 0.8.1
+  # NOTE: this is the custom version of the gem, as the official version 0.8.1
   # contain bugs in the zip library
-  spec.add_runtime_dependency "eeepub_ext", "~> 0.8.2"
+  spec.add_runtime_dependency "eeepub_ext", "~> 0.8.3"
 
   spec.add_development_dependency "awesome_print", "~> 1.2.0"
   spec.add_development_dependency "bundler", "~> 1.7.3"
