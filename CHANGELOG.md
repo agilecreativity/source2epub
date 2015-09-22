@@ -1,3 +1,7 @@
+#### 0.2.8
+
+- Use latest version of gems
+
 #### 0.2.7
 
 - Update gem's dependencies
