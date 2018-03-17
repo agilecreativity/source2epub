@@ -1,3 +1,8 @@
+#### 0.2.9
+
+- Use latest version of gems
+- Fix security warning
+
 #### 0.2.8
 
 - Use latest version of gems
